@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #f4f0ea;
+    padding: 0;
+}
+
+.container {
+    background: transparent;
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px 40px 20px;
+}
+
+/* Header com imagem de fundo e overlay */
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('C:\\Users\\Rafae\\OneDrive\\Área de Trabalho\\Dev\\checklist oficina\\icons\\Design sem nome.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 5px solid #fcc90b;
+    margin-bottom: 20px;
+}
+
+header img {
+    max-width: 180px;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+/* Título Principal Limpo */
+.main-title {
+    color: #fcc90b;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 40px 0 60px 0; /* Espaço para os labels flutuarem sem bater no título */
+}
+
+/* Grid das informações do veículo */
+.vehicle-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 35px;
+    margin-bottom: 50px;
+    padding: 0 10px;
+}
+
+/* Efeito Floating Label */
+.input-group {
+    position: relative;
+    border-bottom: 2px solid #444;
+    transition: border-color 0.3s;
+    height: 45px;
+}
+
+.input-group:focus-within {
+    border-bottom-color: #fcc90b;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 20px 0 5px 0;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    bottom: 35px;
+    font-size: 0.75rem;
+    color: #fcc90b;
+}
+
+/* Tabela de Checklist */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    margin-top: 20px;
+}
+
+th {
+    background: #fcc90b;
+    color: #0a0303;
+    text-transform: uppercase;
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+input[type="checkbox"] {
+    accent-color: #fcc90b;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Assinatura */
+.signature {
+    margin-top: 60px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.signature .line {
+    width: 300px;
+    border-bottom: 2px solid #fcc90b;
+    margin: 10px 0;
+}
+
+.signature strong {
+    color: #fcc90b;
+    text-transform: uppercase;
+}
+
+/* Botão de Impressão */
+button {
+    background: #fcc90b;
+    color: #0a0303;
+    border: none;
+    padding: 15px 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 40px auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Configuração para Impressão */
+@media print {
+    body { background: white; color: black; }
+    header { background: none !important; border-bottom: 3px solid black; }
+    header img { filter: grayscale(1); }
+    .main-title { color: black; margin-top: 20px; }
+    .input-group label { bottom: 35px; font-size: 0.75rem; color: black; }
+    .input-group { border-bottom: 1px solid black; }
+    .input-group input { color: black; }
+    th { background: #ddd !important; border: 1px solid black; color: black; }
+    td { border: 1px solid black; color: black; }
+    .signature .line { border-bottom: 2px solid black; }
+    .signature strong { color: black; }
+    button { display: none; }
+}

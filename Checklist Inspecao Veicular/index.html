@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist Veicular | Ponto 8 Oficina</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="C:\Users\Rafae\OneDrive\Área de Trabalho\Dev\checklist oficina\icons\logo8.png" type="image/png">
+</head>
+<body>
+
+  <header>
+    <img src="C:\Users\Rafae\OneDrive\Área de Trabalho\Dev\checklist oficina\icons\logo.png" alt="Logo Ponto 8 Oficina">
+  </header>
+
+  <div class="container">
+    
+    <h1 class="main-title">Checklist de Inspeção Veicular</h1>
+
+    <section class="vehicle-info">
+      <div class="input-group">
+        <input type="text" id="veiculo" placeholder=" ">
+        <label for="veiculo">Veículo</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="placa" placeholder=" ">
+        <label for="placa">Placa</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="ano" placeholder=" ">
+        <label for="ano">Ano</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="km" placeholder=" ">
+        <label for="km">KM</label>
+      </div>
+    </section>
+
+    <table id="checklist">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Verificado</th>
+          <th>Substituído</th>
+        </tr>
+      </thead>
+      <tbody>
+        </tbody>
+    </table>
+
+    <section class="signature">
+      <p style="font-size: 0.8rem; text-transform: uppercase; color: #888; margin-bottom: 5px;">Assinatura do Responsável</p>
+      <div class="line"></div>
+      <strong>Denilson Machado</strong>
+    </section>
+
+    <button onclick="window.print()">Imprimir Relatório</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
